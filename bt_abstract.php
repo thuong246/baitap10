@@ -124,11 +124,11 @@ class Motorcycle extends Vehicle {
     }
 }
 
-$vehicles = [new Car(), new Motorcycle()];
+$car = new Car();
+$motorcycle = new Motorcycle();
 
-foreach ($vehicles as $vehicle) {
-    echo $vehicle->start() . "<br />";
-}
+echo $car->start;
+echo $motorcycle->start;
 //Tạo một abstract class "Database" (Cơ sở dữ liệu) với các phương thức trừu tượng như "connect", "query" và "disconnect". Tạo các lớp con "MySQLDatabase" và "PostgreSQLDatabase" kế thừa từ lớp Database và triển khai các phương thức theo cách riêng của từng loại cơ sở dữ liệu.
 echo "<br> câu 5: ";
 abstract class Database {

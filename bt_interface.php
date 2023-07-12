@@ -30,6 +30,57 @@ echo "<br> Kích thước sau khi thay đổi: Width = " . $rectangle->getWidth(
 //Tạo một interface "Logger" với các phương thức "logInfo", "logWarning" và "logError". Tạo một lớp "FileLogger" (Ghi log vào file) và một lớp "DatabaseLogger" (Ghi log vào cơ sở dữ liệu) và triển khai interface Logger cho cả hai lớp.
 echo "<br> Câu 2: ";
 //Tạo một interface "Drawable" (Có thể vẽ) với phương thức "draw". Tạo một lớp "Circle" (Hình tròn) và một lớp "Square" (Hình vuông) kế thừa từ interface Drawable và triển khai phương thức draw cho mỗi hình.
+interface Logger {
+    public function logInfo();
+    public function logWarning();
+    public function logError();
+}
+class FileLogger implements Logger {
+    public function logInfo() {
+
+    }
+    public function logWarning() {
+        
+    }
+    public function logError() {
+        
+    }
+    protected $log;
+    public function __construct($log) {
+        $this->log = $log;
+        $this->logInfo();
+        $this->logWarning();
+        $this->logError();
+    }
+    public function getLog() {
+        return $this->log;
+    }
+}
+class DatabaseLogger implements Logger {
+    public function logInfo() {
+
+    }
+    public function logWarning() {
+        
+    }
+    public function logError() {
+        
+    }
+    protected $log;
+    public function __construct($log) {
+        $this->log = $log;
+        $this->logInfo();
+        $this->logWarning();
+        $this->logError();
+    }
+    public function getLog() {
+        return $this->log;
+    }
+}
+$filelogger = new FileLogger("bug...1");
+$databaselogger = new DatabaseLogger("bug...2");
+echo $filelogger->getLog(). "<br>";
+echo $databaselogger->getLog(). "<br>";
 echo "<br> Câu 3: ";
 interface Drawable {
          public function draw();
